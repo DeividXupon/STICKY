@@ -1,0 +1,27 @@
+[
+    {
+        "nome": "Home",
+        "id": 1,
+        "ative": false
+    },
+    {
+        "nome": "Notes",
+        "id": 2,
+        "ative": false
+    },
+    {
+        "nome": "STICKY",
+        "id": 3,
+        "ative": true
+    },
+    {
+        "nome": "Active Recall",
+        "id": 4,
+        "ative": false
+    },
+    {
+        "nome": "Create",
+        "id": 5,
+        "ative": false
+    }
+]
