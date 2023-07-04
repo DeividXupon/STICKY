@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const ItemNav = styled(motion.p)<{$ultimo: boolean, $logo: boolean}>`
-    border-right: ${props => props.$ultimo ? "none" : "4px solid black"};
+    border-right:  ${props => props.$ultimo ? "none" : "4px solid black"};
     display: flex;
     width: 20vw;
     min-width: 20px;

@@ -8,7 +8,7 @@ export default function Header() {
   const [nav, setNav] = useState(navOpt)
 
   function ativaAnimacao(id: number): any {
-    setNav(nav.map(item => 
+    setNav(nav.map( item => 
       ({
         ...item,
         ative: item.id === id ? true : false
