@@ -1,0 +1,47 @@
+[
+  {
+    "color": "#ffffff",
+    "id": 1,
+    "select": true
+  },
+  {
+    "color": "#a8ff80",
+    "id": 2,
+    "select": false
+  },
+  {
+    "color": "#80ffc0",
+    "id": 3,
+    "select": false
+  },
+  {
+    "color": "#8097ff",
+    "id": 4,
+    "select": false
+  },
+  {
+    "color": "#db80ff",
+    "id": 5,
+    "select": false
+  },
+  {
+    "color": "#ff80c0",
+    "id": 6,
+    "select": false
+  },
+  {
+    "color": "#ff8080",
+    "id": 7,
+    "select": false
+  },
+  {
+    "color": "#ffc480",
+    "id": 8,
+    "select": false
+  },
+  {
+    "color": "#fffd80",
+    "id": 9,
+    "select": false
+  }
+]

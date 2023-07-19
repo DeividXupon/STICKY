@@ -22,4 +22,5 @@ export const HeaderContainer = styled.header`
     justify-content: space-evenly;
     border-bottom: 4px solid black;
     background-color: #F2EBDC;
+    z-index: 10;
 `
