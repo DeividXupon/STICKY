@@ -34,15 +34,6 @@ export const MainContainer = styled.main`
       text-align: center;
       width: 100%;
     }
-    .view_button{
-      width: 200px;
-      height: 60px;
-      border-radius: 0%;
-      border: 4px solid black;
-      background: #a5ff3e;
-      font-size: 1.5em;
-      font-family: 'Roboto Slab', serif;
-    }
   }
 `
 

@@ -3,6 +3,7 @@ import colorJson from "../../data/colorCards.json";
 import tagsJson from "../../data/tagsCards.json";
 import CardNote from "../cardNote";
 import { useState } from "react";
+import ButtonSubmitForm from "../buttonSubmitForm";
 
 const FormCreate = () => {
 
@@ -90,7 +91,12 @@ const FormCreate = () => {
         >
           {text}
         </CardNote>
-        <button className="view_button">to create</button>
+        <ButtonSubmitForm
+          color={color}
+          title={title}
+          text={text}
+          tags={tags.filter(item => item.select).map(item => item.nome)}
+        />
       </section>
     </MainContainer>
   )

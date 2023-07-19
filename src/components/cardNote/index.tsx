@@ -9,7 +9,6 @@ interface Iprops {
 }
 
 const CardNote = ({title, children, tags, color}: Iprops) => {
-  console.log(tags)
   return (
     <Card $color={color}>
       <h1 className="card_note_title">{title}</h1>
