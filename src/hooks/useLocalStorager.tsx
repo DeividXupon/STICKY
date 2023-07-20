@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useLocalStorager = (key: string, initialValue: any) => {
+function useLocalStorager(key: string, initialValue: any) {
   const [value, setValue] = useState(() => {
     const storager = localStorage.getItem(key);
     return storager !== null ? JSON.parse(storager) : initialValue;

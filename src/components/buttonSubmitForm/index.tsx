@@ -1,6 +1,6 @@
-import useLocalStorager from "../../hooks/useLocalStorager"
 import { SubmitButton } from "./buttonSubmitForm"
 import { v4 as uuidv4 } from "uuid";
+import useLocalStoragerContext from "../../hooks/useLocalStoragerContext";
 
 
 interface Iprops {
@@ -13,7 +13,7 @@ interface Iprops {
 
 const ButtonSubmitForm = ({ color, tags, title, text, resetForm }: Iprops) => {
 
-  const [storager, setStorager] = useLocalStorager("note", [{ color: "#a7a7a7a7a", tags: ["Tags"], title: "My Name is Deivid", text: "Hi :D", id: uuidv4() }])
+  const {storager, setStorager} = useLocalStoragerContext();
 
   const submit = (note: { color: string, tags: string[], title: string, text: string, id: string}) => {
     setStorager([...storager, note]);
