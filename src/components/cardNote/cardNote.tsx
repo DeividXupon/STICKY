@@ -59,3 +59,21 @@ export const BoxTags = styled.div`
     font-family: 'Roboto Slab', serif;
   }
 `
+
+export const Fechar = styled.button`
+  left: 100%;
+  transform: translate(-70%, 70%);
+  position: relative;
+  border: 5px solid black;
+  width: 35px;
+  height: 35px;
+  background: #ff2828;
+  font-size: 1.15em;
+  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+`
+
+export const BoxCard = styled.article`
+  display: flex;
+  flex-direction: column;
+`
