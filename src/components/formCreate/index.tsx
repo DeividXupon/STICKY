@@ -13,6 +13,18 @@ const FormCreate = () => {
   const [color, setColor] = useState("#ffffff");
   const [colorList, setColorList] = useState(colorJson);
 
+  const resetForm = () => {
+    setText("");
+    setTitle("");
+    selectColor("#ffffff", 1);
+
+    setTags(prev => prev.map(item =>
+    ({
+      ...item,
+      select: false
+    })))
+  }
+
   const tagSelectOffOn = (id: number, select: boolean) => {
 
     const tagsSelected = tags.reduce((acu, item) => {
@@ -55,6 +67,7 @@ const FormCreate = () => {
         <BoxInputTitle>
           <label className="title_label">Title:</label>
           <input
+            value={title}
             onChange={e => setTitle(e.target.value)}
             className="title_input"
             type="text"
@@ -63,6 +76,7 @@ const FormCreate = () => {
         </BoxInputTitle>
         <BoxTextAndTag>
           <textarea
+            value={text}
             onChange={e => setText(e.target.value)}
             className="text"
             placeholder="Text..."
@@ -96,6 +110,7 @@ const FormCreate = () => {
           title={title}
           text={text}
           tags={tags.filter(item => item.select).map(item => item.nome)}
+          resetForm={resetForm}
         />
       </section>
     </MainContainer>
