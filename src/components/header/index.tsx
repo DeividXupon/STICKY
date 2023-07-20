@@ -19,6 +19,7 @@ export default function Header() {
     <HeaderContainer>
       {nav.map((item, index) => 
         <ItemNav 
+          key={index}
           animate={{x: item.ative ? 15 : 0, zIndex: item.ative ? 2 : 0}}
           $ultimo={item.id === nav.length}
           $logo={item.nome === "STICKY"}

@@ -16,7 +16,7 @@ const CardNote = ({ title, children, tags, color }: Iprops) => {
         <h1 className="card_note_title">{title}</h1>
         <Paragraph $textSize={JSON.stringify(children).length} className="card_note_text">{children}</Paragraph>
         <BoxTags>
-          {tags.map(item => <div className="card_tag">{item}</div>)}
+          {tags.map((item, index) => <div key={index} className="card_tag">{item}</div>)}
         </BoxTags>
       </Card>
     </BoxCard>
