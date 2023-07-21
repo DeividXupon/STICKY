@@ -9,7 +9,7 @@ const ShowcaseNote = () => {
   return (
     <MainShowNotes>
       {storager.map(item =>
-        <CardNote key={item.id} color={item.color} title={item.title} tags={item.tags}>{item.text}</CardNote>
+        <CardNote key={item.id} id={item.id} color={item.color} title={item.title} tags={item.tags}>{item.text}</CardNote>
       )}
     </MainShowNotes>
   )

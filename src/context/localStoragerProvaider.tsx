@@ -12,7 +12,7 @@ const LocalStoragerProvaider = ({ children }: Iprops) => {
 
   const [storager, setStorager] = useLocalStorager("note",
     [{
-      color: "#a7a7a7a7a",
+      color: "#999999",
       tags: ["Tags"],
       title: "My Name is Deivid",
       text: "Hi 🤓",
