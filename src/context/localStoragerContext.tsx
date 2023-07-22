@@ -3,7 +3,7 @@ import { createContext } from "react"
 
 //typagem de um item do aray do state storager
 interface IstoragerItem {
-  color: string,
+  color: string | undefined,
   tags: string[],
   title: string,
   text: string,

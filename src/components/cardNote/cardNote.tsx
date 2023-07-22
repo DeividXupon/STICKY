@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const Card = styled.div<{$color: string}>`
+export const Card = styled.div<{$color?: string}>`
   display: flex;
   flex-direction: column;
   align-items: center;

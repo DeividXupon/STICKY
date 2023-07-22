@@ -7,7 +7,7 @@ interface Iprops {
   title: string,
   children: ReactNode,
   tags: string[],
-  color: string,
+  color: string | undefined,
   id?: string
 }
 

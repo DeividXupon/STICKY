@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Annotation } from "../decorativeNote/decorativeNote";
+import { Annotation } from "../../components/decorativeNote/decorativeNote";
 
 export const Main = styled.main`
     display: flex;

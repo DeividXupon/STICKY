@@ -1,22 +1,31 @@
-import { Colors, Cor, MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag, CharacterLimiter } from "./formCreate";
+import { useState } from "react";
+
+import { MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag } from "./formCreate";
+import { CharacterLimiter, InputLongText } from "../../UI";
+
 import colorJson from "../../data/colorCards.json";
 import tagsJson from "../../data/tagsCards.json";
-import CardNote from "../cardNote";
-import { useState } from "react";
-import ButtonSubmitForm from "../buttonSubmitForm";
+
+import ButtonSubmitForm from "../../components/buttonSubmitForm";
+import SelectColor from "../../components/selectColor";
+import Preview from "../../components/preview";
+import CardNote from "../../components/cardNote";
 
 const FormCreate = () => {
 
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [tags, setTags] = useState(tagsJson);
-  const [color, setColor] = useState("#ffffff");
   const [colorList, setColorList] = useState(colorJson);
+
+  const getSelectColor = (colorList: typeof colorJson) => {
+    return colorList.find(item => item.select)?.color;
+  }
 
   const resetForm = () => {
     setText("");
     setTitle("");
-    selectColor("#ffffff", 1);
+    setColorList(colorJson);
 
     setTags(prev => prev.map(item =>
     ({
@@ -45,25 +54,15 @@ const FormCreate = () => {
     }
   }
 
-  const selectColor = (color: string, id: number) => {
-    setColor(color)
-    const edit = colorList.map(item => ({ ...item, select: id === item.id ? true : false }))
-    setColorList(edit);
-  }
-
   return (
     <MainContainer>
       <section className="form">
-        <Colors>
-          {colorList.map(item =>
-            <Cor
-              $select={item.select}
-              onClick={() => selectColor(item.color, item.id)}
-              key={item.id}
-              $color={item.color}>
-            </Cor>
-          )}
-        </Colors>
+
+        <SelectColor
+          colorList={colorList}
+          setColorList={setColorList}
+        />
+
         <BoxInputTitle>
           <label className="title_label">Title:</label>
           <input
@@ -74,15 +73,19 @@ const FormCreate = () => {
             maxLength={25}>
           </input>
         </BoxInputTitle>
+
         <BoxTextAndTag>
-          <textarea
+          <InputLongText
+            $height="250px"
             value={text}
-            onChange={e => setText(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
             className="text"
             placeholder="Text..."
             maxLength={500}
           />
-          <CharacterLimiter $lengt={text.length}>{text.length} / 500</CharacterLimiter>
+
+          <CharacterLimiter $textLengt={text.length}>{text.length} / 500</CharacterLimiter>
+
           <Tags>
             {tags.map(item =>
               <Tag
@@ -95,24 +98,26 @@ const FormCreate = () => {
             )}
           </Tags>
         </BoxTextAndTag>
+
       </section>
-      <section className="view">
-        <h1 className="view_title">Preview</h1>
+
+      <Preview>
         <CardNote
           tags={tags.filter(item => item.select).map(item => item.nome)}
           title={title}
-          color={color}
+          color={getSelectColor(colorList)}
         >
           {text}
         </CardNote>
+
         <ButtonSubmitForm
-          color={color}
+          color={getSelectColor(colorList)}
           title={title}
           text={text}
           tags={tags.filter(item => item.select).map(item => item.nome)}
           resetForm={resetForm}
         />
-      </section>
+      </Preview>
     </MainContainer>
   )
 }

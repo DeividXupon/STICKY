@@ -1,8 +1,7 @@
-import React from 'react';
-import Home from '../components/home';
-import Create from '../components/create';
-import FormCreate from '../components/formCreate';
-import ShowcaseNote from '../components/showcaseNotes';
+import Home from './home';
+import Create from './create';
+import FormCreate from './formCreate';
+import ShowcaseNote from './showcaseNotes';
 
 function App() {
   return (

@@ -4,7 +4,7 @@ import useLocalStoragerContext from "../../hooks/useLocalStoragerContext";
 
 
 interface Iprops {
-  color: string,
+  color: string | undefined,
   tags: string[],
   title: string,
   text: string,
@@ -15,7 +15,7 @@ const ButtonSubmitForm = ({ color, tags, title, text, resetForm }: Iprops) => {
 
   const {storager, setStorager} = useLocalStoragerContext();
 
-  const submit = (note: { color: string, tags: string[], title: string, text: string, id: string}) => {
+  const submit = (note: { color: string | undefined, tags: string[], title: string, text: string, id: string}) => {
     setStorager([...storager, note]);
     resetForm();
   }

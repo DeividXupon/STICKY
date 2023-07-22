@@ -1,4 +1,4 @@
-import DecorativeNote from "../decorativeNote";
+import DecorativeNote from "../../components/decorativeNote";
 import { Button, Main, TextSection } from "./home";
 
 export default function Home() {
