@@ -19,8 +19,7 @@ export const Card = styled.div<{$color?: string}>`
 
 export const Paragraph = styled.p<{$textSize: number}>`
   padding: 0px 4px 0px 4px;
-  overflow: hidden;
-  text-overflow: ellipsis; 
+  word-wrap: break-word;
   width: 100%;
   text-align: center;
   font-family: 'Roboto Slab', serif;
