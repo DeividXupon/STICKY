@@ -6,7 +6,7 @@ import ShowcaseNote from './showcaseNotes';
 function App() {
   return (
     <div className="App">
-      <FormCreate/>
+      <ShowcaseNote/>
     </div>
   );
 }

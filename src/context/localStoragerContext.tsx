@@ -2,7 +2,7 @@ import { createContext } from "react"
 
 
 //typagem de um item do aray do state storager
-interface IstoragerItem {
+interface IstoragerNoteItem {
   color: string | undefined,
   tags: string[],
   title: string,
@@ -10,19 +10,39 @@ interface IstoragerItem {
   id: string
 }
 
-//typagem do set do state do storager
-type TypeSetStorager = React.Dispatch<React.SetStateAction<IstoragerItem[]>>
+interface IstoragerRecallItem {
+  color: string | undefined,
+  folder: string, 
+  question: string, 
+  response: string,
+  id: string
+}
 
+//typagem do set do state do storager
+type SetNoteStorager = React.Dispatch<React.SetStateAction<IstoragerNoteItem[]>>
+
+type SetRecallStorager = React.Dispatch<React.SetStateAction<IstoragerRecallItem[]>>
+
+type SetFlodersStorager = React.Dispatch<React.SetStateAction<string[]>>
 
 //typagem do createContext ps: storager esta com [] pq typamos apenas um objeto
 interface IlocalStoragerContextValue {
-  storager: IstoragerItem[],
-  setStorager: TypeSetStorager
+  noteStorager: IstoragerNoteItem[],
+  setNoteStorager: SetNoteStorager,
+  recallStorager: IstoragerRecallItem[],
+  setRecallStorager: SetRecallStorager,
+  flodersStorager: string[],
+  setFlodersStorager: SetFlodersStorager
+  
 }
 
 const LocalStoragerContext = createContext<IlocalStoragerContextValue>({
-  storager: [],
-  setStorager: () => {},
+  noteStorager: [],
+  setNoteStorager: () => {},
+  recallStorager: [],
+  setRecallStorager: () => {},
+  flodersStorager: [],
+  setFlodersStorager: () => {}
 });
 
 export default LocalStoragerContext;

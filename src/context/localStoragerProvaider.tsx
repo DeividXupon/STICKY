@@ -10,7 +10,7 @@ interface Iprops {
 
 const LocalStoragerProvaider = ({ children }: Iprops) => {
 
-  const [storager, setStorager] = useLocalStorager("note",
+  const [noteStorager, setNoteStorager] = useLocalStorager("note",
     [{
       color: "#999999",
       tags: ["Tags"],
@@ -19,7 +19,29 @@ const LocalStoragerProvaider = ({ children }: Iprops) => {
       id: uuidv4()
     }]);
 
-  return <LocalStoragerContext.Provider value={{storager, setStorager}}>{children}</LocalStoragerContext.Provider>
+  const [flodersStorager, setFlodersStorager] = useLocalStorager("floders",
+    ["MATHEMATICS", "ENGLISH", "GENERIC"])
+
+  const [recallStorager, setRecallStorager] = useLocalStorager("recall",
+    [{
+      color: "#999999",
+      folder: "MATHEMATICS",
+      question: "2 + 2",
+      response: "4",
+      id: uuidv4()
+    }])
+
+  return <LocalStoragerContext.Provider
+    value={{
+      noteStorager,
+      setNoteStorager,
+      recallStorager,
+      setRecallStorager,
+      flodersStorager,
+      setFlodersStorager
+    }}>
+    {children}
+  </LocalStoragerContext.Provider>
 }
 
 export default LocalStoragerProvaider;

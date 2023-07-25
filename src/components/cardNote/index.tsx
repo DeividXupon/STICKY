@@ -21,11 +21,11 @@ const CardNote = ({ title, children, tags, color, id }: Iprops) => {
     setOnOffAlert(true);
   }
 
-  const { storager, setStorager } = useLocalStoragerContext()
+  const { noteStorager, setNoteStorager } = useLocalStoragerContext()
 
   const DeletCard = () => {
-    const newList = storager.filter(item => item.id === id ? false : true)
-    setStorager(newList)
+    const newList = noteStorager.filter(item => item.id === id ? false : true)
+    setNoteStorager(newList)
   }
 
   const card =
