@@ -19,8 +19,8 @@ const LocalStoragerProvaider = ({ children }: Iprops) => {
       id: uuidv4()
     }]);
 
-  const [flodersStorager, setFlodersStorager] = useLocalStorager("floders",
-    ["MATHEMATICS", "ENGLISH", "GENERIC"])
+  const [foldersStorager, setFoldersStorager] = useLocalStorager("folders",
+    ["Generic", "Mathematics", "English"])
 
   const [recallStorager, setRecallStorager] = useLocalStorager("recall",
     [{
@@ -37,8 +37,8 @@ const LocalStoragerProvaider = ({ children }: Iprops) => {
       setNoteStorager,
       recallStorager,
       setRecallStorager,
-      flodersStorager,
-      setFlodersStorager
+      foldersStorager,
+      setFoldersStorager
     }}>
     {children}
   </LocalStoragerContext.Provider>

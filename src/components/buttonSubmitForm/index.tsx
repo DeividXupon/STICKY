@@ -1,4 +1,4 @@
-import { SubmitButton } from "./buttonSubmitForm"
+import { SubmitButton } from "../../UI"
 import { v4 as uuidv4 } from "uuid";
 import useLocalStoragerContext from "../../hooks/useLocalStoragerContext";
 

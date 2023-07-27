@@ -1,12 +1,13 @@
 import Home from './home';
 import Create from './create';
-import FormCreate from './formCreate';
+import FormCreateNote from './formCreateNote';
+import FormCreateRecall from './formCreateRecall';
 import ShowcaseNote from './showcaseNotes';
 
 function App() {
   return (
     <div className="App">
-      <ShowcaseNote/>
+      <FormCreateRecall/>
     </div>
   );
 }

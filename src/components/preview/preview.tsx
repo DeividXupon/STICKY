@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const ContainerView = styled.section`
+export const ContainerView = styled.section<{$color: string}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@ export const ContainerView = styled.section`
   padding-top: 90px;
   height: 100vh;
   width: 45vw;
-  background: #fcff3e;
+  background: ${props => props.$color};
   
   .view_title{
     font-size: 3em;

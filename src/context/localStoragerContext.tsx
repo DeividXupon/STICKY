@@ -31,8 +31,8 @@ interface IlocalStoragerContextValue {
   setNoteStorager: SetNoteStorager,
   recallStorager: IstoragerRecallItem[],
   setRecallStorager: SetRecallStorager,
-  flodersStorager: string[],
-  setFlodersStorager: SetFlodersStorager
+  foldersStorager: string[],
+  setFoldersStorager: SetFlodersStorager
   
 }
 
@@ -41,8 +41,8 @@ const LocalStoragerContext = createContext<IlocalStoragerContextValue>({
   setNoteStorager: () => {},
   recallStorager: [],
   setRecallStorager: () => {},
-  flodersStorager: [],
-  setFlodersStorager: () => {}
+  foldersStorager: [],
+  setFoldersStorager: () => {}
 });
 
 export default LocalStoragerContext;

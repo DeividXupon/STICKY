@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import { MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag } from "./formCreate";
-import { CharacterLimiter, InputLongText } from "../../UI";
+import { MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag } from "./formCreateNote";
 
 import colorJson from "../../data/colorCards.json";
 import tagsJson from "../../data/tagsCards.json";
@@ -10,8 +9,9 @@ import ButtonSubmitForm from "../../components/buttonSubmitForm";
 import SelectColor from "../../components/selectColor";
 import Preview from "../../components/preview";
 import CardNote from "../../components/cardNote";
+import InputText from "../../components/inputText";
 
-const FormCreate = () => {
+const FormCreateNote = () => {
 
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
@@ -75,16 +75,12 @@ const FormCreate = () => {
         </BoxInputTitle>
 
         <BoxTextAndTag>
-          <InputLongText
-            $height="250px"
+          <InputText
             value={text}
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
-            className="text"
-            placeholder="Text..."
+            setValue={setText}
             maxLength={500}
-          />
-
-          <CharacterLimiter $textLengt={text.length}>{text.length} / 500</CharacterLimiter>
+            placeholder="Text..."
+            $height="250px" />
 
           <Tags>
             {tags.map(item =>
@@ -101,7 +97,7 @@ const FormCreate = () => {
 
       </section>
 
-      <Preview>
+      <Preview color="#fcff3e">
         <CardNote
           tags={tags.filter(item => item.select).map(item => item.nome)}
           title={title}
@@ -122,4 +118,4 @@ const FormCreate = () => {
   )
 }
 
-export default FormCreate;
+export default FormCreateNote;
