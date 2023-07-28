@@ -1,5 +1,5 @@
 import { ButtonCard, CardBox } from "./cardRecall";
-import { Fechar, Paragraph } from "../../UI";
+import { Fechar, Paragraph } from "UI";
 import { useState } from "react";
  
 interface Iprops {

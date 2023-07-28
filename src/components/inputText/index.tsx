@@ -1,4 +1,4 @@
-import { CharacterLimiter, InputLongText } from "../../UI";
+import { CharacterLimiter, InputLongText } from "UI";
 
 interface Iprops {
   value: string,

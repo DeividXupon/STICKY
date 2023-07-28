@@ -1,5 +1,5 @@
-import { SubmitButton } from "../../UI"
-import useLocalStoragerContext from "../../hooks/useLocalStoragerContext"
+import { SubmitButton } from "UI"
+import useLocalStoragerContext from "hooks/useLocalStoragerContext"
 import { v4 as uuidv4 } from "uuid";
 
 interface Iprops {

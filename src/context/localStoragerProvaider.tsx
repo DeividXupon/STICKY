@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import useLocalStorager from "../hooks/useLocalStorager";
+import useLocalStorager from "hooks/useLocalStorager";
 import { v4 as uuidv4 } from "uuid";
 
 import LocalStoragerContext from "./localStoragerContext";

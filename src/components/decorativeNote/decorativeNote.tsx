@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion"
-import annot from "../../assets/annotation.png"
+import annot from "assets/annotation.png"
 
 export const Annotation = styled(motion.div)<{$top: string, $left: string, $color: string}>`
     position: absolute;

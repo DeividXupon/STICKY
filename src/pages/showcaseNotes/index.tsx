@@ -1,5 +1,5 @@
-import useLocalStoragerContext from "../../hooks/useLocalStoragerContext";
-import CardNote from "../../components/cardNote";
+import useLocalStoragerContext from "hooks/useLocalStoragerContext";
+import CardNote from "components/cardNote";
 import { MainShowNotes } from "./showcaseNotes";
 
 const ShowcaseNote = () => {

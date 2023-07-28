@@ -1,4 +1,4 @@
-import colorJson from "../../data/colorCards.json";
+import colorJson from "data/colorCards.json";
 import { Colors, Cor } from "./selectColor";
 
 interface Iprops {

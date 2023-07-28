@@ -1,4 +1,4 @@
-import CreateOption from "../../components/createOption";
+import CreateOption from "components/createOption";
 import { ChoiceSection, MainCreate } from "./create"
 import { BsLightbulb, BsFillFileEarmarkFontFill } from "react-icons/bs";
 

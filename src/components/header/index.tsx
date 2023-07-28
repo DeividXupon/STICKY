@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HeaderContainer, ItemNav } from "./header";
-import navOpt from "../../data/navHock.json";
+import navOpt from "data/navHock.json";
 import { GiNotebook } from "react-icons/gi";
 
 export default function Header() {

@@ -1,7 +1,7 @@
-import useLocalStoragerContext from "../../hooks/useLocalStoragerContext"
+import useLocalStoragerContext from "hooks/useLocalStoragerContext"
 import Alert from "../alert"
 import { BoxCard, BoxTags, Card } from "./cardNote"
-import { Paragraph, Fechar } from "../../UI"
+import { Paragraph, Fechar } from "UI"
 import { ReactNode, useState } from "react"
 
 interface Iprops {

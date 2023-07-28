@@ -2,14 +2,14 @@ import { useState } from "react";
 
 import { MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag } from "./formCreateNote";
 
-import colorJson from "../../data/colorCards.json";
-import tagsJson from "../../data/tagsCards.json";
+import colorJson from "data/colorCards.json";
+import tagsJson from "data/tagsCards.json";
 
-import ButtonSubmitForm from "../../components/buttonSubmitForm";
-import SelectColor from "../../components/selectColor";
-import Preview from "../../components/preview";
-import CardNote from "../../components/cardNote";
-import InputText from "../../components/inputText";
+import ButtonSubmitForm from "components/buttonSubmitForm";
+import SelectColor from "components/selectColor";
+import Preview from "components/preview";
+import CardNote from "components/cardNote";
+import InputText from "components/inputText";
 
 const FormCreateNote = () => {
 

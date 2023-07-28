@@ -2,14 +2,15 @@ import { useState, ChangeEvent } from "react";
 
 import { BoxForm, ButtonChoice, Choice, InputChoice, MainContainer } from "./formCreateRecall";
 
-import colorJson from "../../data/colorCards.json";
+import colorJson from "data/colorCards.json";
 
-import SelectColor from "../../components/selectColor";
-import Preview from "../../components/preview";
-import useLocalStoragerContext from "../../hooks/useLocalStoragerContext";
-import CardRecall from "../../components/cardRecall";
-import ButtonSubmitFormRecall from "../../components/buttonSubmitFormRecall";
-import InputText from "../../components/inputText";
+import useLocalStoragerContext from "hooks/useLocalStoragerContext";
+
+import InputText from "components/inputText";
+import Preview from "components/preview";
+import CardRecall from "components/cardRecall";
+import SelectColor from "components/selectColor";
+import ButtonSubmitFormRecall from "components/buttonSubmitFormRecall";
 
 const FormCreateRecall = () => {
 
