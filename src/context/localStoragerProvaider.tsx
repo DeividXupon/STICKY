@@ -25,7 +25,7 @@ const LocalStoragerProvaider = ({ children }: Iprops) => {
   const [recallStorager, setRecallStorager] = useLocalStorager("recall",
     [{
       color: "#999999",
-      folder: "MATHEMATICS",
+      folder: "Mathematics",
       question: "2 + 2",
       response: "4",
       id: uuidv4()
