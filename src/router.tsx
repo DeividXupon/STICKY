@@ -9,7 +9,8 @@ import ShowcaseFolders from 'pages/showcaseFolders';
 import Header from 'components/header';
 import LocalStoragerProvaider from 'context/localStorager/localStoragerProvaider';
 import NavigationProvaider from 'context/navigation/navigationProvaider';
-import ShowcaseItensInFolder from 'pages/floder';
+import ShowcaseItensInFolder from 'pages/folder';
+import NotFound from 'pages/notFound';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/notes' element={<ShowcaseNoteWithStoragerProvider />} />
         <Route path='/activeRecall' element={<ShowcaseFoldersWithStoragerProvider />} />
         <Route path='/folder' element={<ShowcaseItensInFolder />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
     </Router>
   );
