@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { Alink, HeaderContainer, ItemNav } from "./header";
-import navOpt from "data/navHock.json";
 import { GiNotebook } from "react-icons/gi";
+import useNavigationContext from "hooks/useNavigationContext";
 
 
 export default function Header() {
 
-  const [nav, setNav] = useState(navOpt)
+  const { nav, setNav } = useNavigationContext()
 
   function ativaAnimacao(id: number): any {
     setNav(nav.map(item =>

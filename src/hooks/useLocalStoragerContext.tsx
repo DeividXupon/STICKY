@@ -1,4 +1,4 @@
-import LocalStoragerContext from "context/localStoragerContext";
+import LocalStoragerContext from "context/localStorager/localStoragerContext";
 import { useContext } from 'react'
 
 export default function useLocalStoragerContext() {

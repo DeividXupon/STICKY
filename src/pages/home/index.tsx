@@ -1,7 +1,20 @@
 import DecorativeNote from "components/decorativeNote";
 import { Button, Main, TextSection } from "./home";
+import { Link } from "react-router-dom";
+import useNavigationContext from "hooks/useNavigationContext";
 
 export default function Home() {
+
+  const {nav, setNav} = useNavigationContext()
+
+  function ativaAnimacao(id: number): any {
+    setNav(nav.map(item =>
+    ({
+      ...item,
+      ative: item.id === id ? true : false
+    })))
+  }
+
   return (
     <>
       <Main>
@@ -13,11 +26,15 @@ export default function Home() {
         <TextSection>
           <h2>WELCOME TO <b>S2</b> STICKY</h2>
           <h1>Organize Your Ideas In A Smart And Fun Way</h1>
-          <Button
-            whileHover={{ backgroundColor: "#6fffa6" }}
-          >
-            Start now
-          </Button>
+
+          <Link to="/create">
+            <Button
+              whileHover={{ backgroundColor: "#6fffa6" }}
+              onClick={() => ativaAnimacao(5)}
+            >
+              Start now
+            </Button>
+          </Link>
         </TextSection>
       </Main>
     </>

@@ -7,26 +7,47 @@ import FormCreateRecall from 'pages/formCreateRecall';
 import ShowcaseNote from 'pages/showcaseNotes';
 import ShowcaseFolders from 'pages/showcaseFolders';
 import Header from 'components/header';
-import LocalStoragerProvaider from 'context/localStoragerProvaider';
+import LocalStoragerProvaider from 'context/localStorager/localStoragerProvaider';
+import NavigationProvaider from 'context/navigation/navigationProvaider';
+import ShowcaseItensInFolder from 'pages/floder';
 
 const App = () => {
   return (
     <Router>
-      <Header />
+      <HeaderWithNavigationProvider />
 
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<HomeWithNavigationProvider />} />
         <Route path='/create' element={<Create />} />
         <Route path='/formNote' element={<FormCreateNoteWithStoragerProvider />} />
         <Route path='/formRecall' element={<FormCreateRecallWithStoragerProvider />} />
         <Route path='/notes' element={<ShowcaseNoteWithStoragerProvider />} />
         <Route path='/activeRecall' element={<ShowcaseFoldersWithStoragerProvider />} />
+        <Route path='/folder' element={<ShowcaseItensInFolder />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+const HeaderWithNavigationProvider = () => {
+  return (
+    <NavigationProvaider>
+      <Header />
+    </NavigationProvaider>
+    
+  )
+}
+
+const HomeWithNavigationProvider = () => {
+  return (
+    <NavigationProvaider>
+      <Home />
+    </NavigationProvaider>
+    
+  )
+}
 
 const FormCreateNoteWithStoragerProvider = () => {
   return (
