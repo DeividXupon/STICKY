@@ -2,26 +2,31 @@
     {
         "nome": "About",
         "id": 1,
-        "ative": false
+        "ative": false,
+        "routerName": "/about"
     },
     {
         "nome": "Notes",
         "id": 2,
-        "ative": false
+        "ative": false,
+        "routerName": "/notes"
     },
     {
         "nome": "STICKY",
         "id": 3,
-        "ative": true
+        "ative": true,
+        "routerName": "/"
     },
     {
         "nome": "Active Recall",
         "id": 4,
-        "ative": false
+        "ative": false,
+        "routerName": "/activeRecall"
     },
     {
         "nome": "Create",
         "id": 5,
-        "ative": false
+        "ative": false,
+        "routerName": "/create"
     }
  ]

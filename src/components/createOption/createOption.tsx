@@ -53,6 +53,9 @@ export const Option = styled.div`
         border-bottom: 4px solid #0b8300;
         box-shadow: -0px 0px 0px #072c00;
         transition: 400ms;
+        text-align: center;
+        line-height: 45px;
+        text-decoration: none;
 
         &:hover{
             background: #66fc5888;

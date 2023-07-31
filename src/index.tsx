@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './pages/App';
+import App from './router';
 import { GlobalStyles } from './components/globalStyles';
-import Header from './components/header';
-import LocalStoragerProvaider from './context/localStoragerProvaider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,11 +9,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStyles />
-    <Header />
 
-    <LocalStoragerProvaider>
-      <App />
-    </LocalStoragerProvaider>
+    <App />
     
   </React.StrictMode>
 );
