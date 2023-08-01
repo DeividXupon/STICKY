@@ -94,12 +94,13 @@ export const SubmitButton = styled.button`
 `
 
 export const MainShowcase = styled.main<{$color?: string}>`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding-top: 120px;
   padding-bottom: 120px;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background: ${props => props.$color ? props.$color : "#7bf6ff"} ;
   justify-content: center;
   gap: 40px;

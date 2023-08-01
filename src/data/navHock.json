@@ -1,9 +1,9 @@
 [
     {
-        "nome": "About",
+        "nome": "Random Card",
         "id": 1,
         "ative": false,
-        "routerName": "/about"
+        "routerName": "/random"
     },
     {
         "nome": "Notes",
