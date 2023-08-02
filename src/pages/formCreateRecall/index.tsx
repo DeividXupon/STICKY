@@ -69,7 +69,14 @@ const FormCreateRecall = () => {
           resetForm={resetForm} />
 
       </Preview>
-      <BoxForm>
+      <BoxForm
+        initial={{x: "100%"}}
+        animate={{x: "0%"}}
+        transition={{
+          delay: 0.2,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}>
 
         <section className="form">
 

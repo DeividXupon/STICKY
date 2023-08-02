@@ -1,23 +1,24 @@
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
 export const MainContainer = styled.main`
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: #fdff69;
-
-  .form{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 55vw;
-    background: #fdff83;
-    border-right: 5px solid black;
-    box-shadow: 10px 0px 0px #00000060;
-    padding: 90px 15px 10px 15px;
-    justify-content: space-between;
-    z-index: 1;
-  }
+  background: #fcff3e;
+  overflow: hidden;
+`
+export const FormSection = styled(motion.section)`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 55vw;
+  background: #fdff83;
+  border-right: 5px solid black;
+  box-shadow: 10px 0px 0px #00000060;
+  padding: 90px 15px 10px 15px;
+  justify-content: space-between;
+  z-index: 1;
 `
 
 export const BoxInputTitle = styled.div`

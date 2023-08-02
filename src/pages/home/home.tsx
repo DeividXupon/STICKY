@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Annotation } from "components/decorativeNote/decorativeNote";
 
-export const Main = styled.main`
+export const Main = styled(motion.main)`
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
     background-color: #F2BCFF;
+    overflow: hidden;
 `
 
 export const TextSection = styled(motion.section)`

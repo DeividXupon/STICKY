@@ -1,6 +1,7 @@
 import { MainShowcase } from "UI";
 import CardNote from "components/cardNote";
 import CardRecall from "components/cardRecall";
+import ShowcaseAnimate from "components/showcaseAnimate";
 import useLocalStoragerContext from "hooks/useLocalStoragerContext";
 
 
@@ -19,9 +20,9 @@ const RandomCard = () => {
   const randomNoteIndex = noteStorager[getRandomInt(0, noteStorager.length - 1)]
 
   return (
-    <MainShowcase $color="#cecece">
+    <ShowcaseAnimate $color="#cecece">
       <div style={{marginTop: "8px"}}>
-      { recallStorager.length !== 0 || noteStorager.length !== 0 ? 
+      { recallStorager.length !== 0 && noteStorager.length !== 0 ? 
       
       typeCard === 1 && noteStorager.length !== 0?
         <CardNote
@@ -35,9 +36,9 @@ const RandomCard = () => {
           color={randomRecallIndex.color}
           question={randomRecallIndex.question}
           respons={randomRecallIndex.response}
-          key={randomRecallIndex.id} /> : <h1>Nothing here</h1>}
+          key={randomRecallIndex.id} /> : <h1>Nothing here {recallStorager.length === 0 ? " cry at least one recall-type card" : " cry at least one note-type card"}</h1>}
         </div>
-    </MainShowcase>
+    </ShowcaseAnimate>
   )
 }
 

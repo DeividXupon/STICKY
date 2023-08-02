@@ -2,18 +2,21 @@ import CardFolder from "components/cardFolder";
 import useLocalStoragerContext from "hooks/useLocalStoragerContext";
 import { v4 as uuidv4 } from "uuid";
 
-import { MainShowcase } from "UI";
+import ShowcaseAnimate from "components/showcaseAnimate";
+import ChildrenShowcaseAnimate from "components/showcaseAnimate/childrenShowcaseAnimate";
 
 const ShowcaseFolders = () => {
 
   const { foldersStorager } = useLocalStoragerContext();
 
   return (
-    <MainShowcase $color="#ff81e0">
+    <ShowcaseAnimate $color="#ff81e0">
       {foldersStorager.map(item =>
-        <CardFolder key={uuidv4()}>{item}</CardFolder>
+      <ChildrenShowcaseAnimate key={uuidv4()}>
+        <CardFolder >{item}</CardFolder>
+      </ChildrenShowcaseAnimate>
       )}
-    </MainShowcase>
+    </ShowcaseAnimate>
   )
 }
 

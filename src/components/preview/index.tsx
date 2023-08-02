@@ -6,10 +6,22 @@ interface Iprops {
   color: string
 }
 
-const Preview = ({children, color}: Iprops) => {
+const Preview = ({ children, color }: Iprops) => {
 
-  return(
-    <ContainerView $color={color}>
+  return (
+    <ContainerView
+      initial={{y: "100%"}}
+      animate={{y: "0%"}}
+      transition={{
+        delay: 1,
+        y:{
+          type: "spring",
+          damping: 7,
+          stiffness: 100,
+        }
+      }}
+      $color={color}
+    >
       <h1 className="view_title">Preview</h1>
       {children}
     </ContainerView>

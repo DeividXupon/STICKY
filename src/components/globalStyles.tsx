@@ -6,4 +6,9 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0px;
         box-sizing: border-box;
     }
+
+    body{
+        background: #747474;
+        overflow-x: hidden;
+    }
 `

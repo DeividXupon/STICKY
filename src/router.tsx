@@ -11,7 +11,7 @@ import LocalStoragerProvaider from 'context/localStorager/localStoragerProvaider
 import NavigationProvaider from 'context/navigation/navigationProvaider';
 import ShowcaseItensInFolder from 'pages/folder';
 import NotFound from 'pages/notFound';
-import RandomCard from 'pages/randomCard';
+import RandomCard from 'pages/random';
 
 const App = () => {
   return (
@@ -25,7 +25,7 @@ const App = () => {
         <Route path='/formRecall' element={<FormCreateRecallWithStoragerProvider />} />
         <Route path='/notes' element={<ShowcaseNoteWithStoragerProvider />} />
         <Route path='/activeRecall' element={<ShowcaseFoldersWithStoragerProvider />} />
-        <Route path='/folder' element={<ShowcaseItensInFolder />} />
+        <Route path='/folder' element={<ShowcaseItensInFolderWithStoragerProvider />} />
         <Route path='/random' element={<RandomWithStoragerProvider />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
@@ -50,6 +50,14 @@ const HomeWithNavigationProvider = () => {
       <Home />
     </NavigationProvaider>
     
+  )
+}
+
+const ShowcaseItensInFolderWithStoragerProvider = () => {
+  return (
+    <LocalStoragerProvaider>
+      <ShowcaseItensInFolder />
+    </LocalStoragerProvaider>
   )
 }
 

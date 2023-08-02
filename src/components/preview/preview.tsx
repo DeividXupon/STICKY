@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
-export const ContainerView = styled.section<{$color: string}>`
+export const ContainerView = styled(motion.section)<{$color: string}>`
   display: flex;
   flex-direction: column;
   align-items: center;

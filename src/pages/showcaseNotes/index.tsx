@@ -1,6 +1,7 @@
 import useLocalStoragerContext from "hooks/useLocalStoragerContext";
 import CardNote from "components/cardNote";
-import { MainShowcase } from "UI";
+import ShowcaseAnimate from "components/showcaseAnimate";
+import ChildrenShowcaseAnimate from "components/showcaseAnimate/childrenShowcaseAnimate";
 
 
 const ShowcaseNote = () => {
@@ -8,11 +9,13 @@ const ShowcaseNote = () => {
   const { noteStorager } = useLocalStoragerContext();
 
   return (
-    <MainShowcase>
+    <ShowcaseAnimate>
       {noteStorager.map(item =>
-        <CardNote key={item.id} id={item.id} color={item.color} title={item.title} tags={item.tags}>{item.text}</CardNote>
+        <ChildrenShowcaseAnimate key={item.id}>
+          <CardNote id={item.id} color={item.color} title={item.title} tags={item.tags}>{item.text}</CardNote>
+        </ChildrenShowcaseAnimate>
       )}
-    </MainShowcase>
+    </ShowcaseAnimate>
   )
 }
 

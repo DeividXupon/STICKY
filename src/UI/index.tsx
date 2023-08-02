@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 export const InputLongText = styled.textarea<{$width?: string, $height?: string}>`
@@ -93,7 +94,7 @@ export const SubmitButton = styled.button`
   cursor: pointer;
 `
 
-export const MainShowcase = styled.main<{$color?: string}>`
+export const MainShowcase = styled(motion.main)<{$color?: string}>`
   position: relative;
   display: flex;
   flex-wrap: wrap;

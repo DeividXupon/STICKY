@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag } from "./formCreateNote";
+import { MainContainer, BoxInputTitle, BoxTextAndTag, Tags, Tag, FormSection } from "./formCreateNote";
 
 import colorJson from "data/colorCards.json";
 import tagsJson from "data/tagsCards.json";
@@ -56,7 +56,14 @@ const FormCreateNote = () => {
 
   return (
     <MainContainer>
-      <section className="form">
+      <FormSection 
+        initial={{x: "-100%"}}
+        animate={{x: "0%"}}
+        transition={{
+          delay: 0.2,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}>
 
         <SelectColor
           colorList={colorList}
@@ -95,7 +102,7 @@ const FormCreateNote = () => {
           </Tags>
         </BoxTextAndTag>
 
-      </section>
+      </FormSection>
 
       <Preview color="#fcff3e">
         <CardNote

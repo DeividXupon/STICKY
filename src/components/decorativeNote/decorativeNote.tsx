@@ -5,8 +5,8 @@ import annot from "assets/annotation.png"
 export const Annotation = styled(motion.div)<{$top: string, $left: string, $color: string}>`
     position: absolute;
     background-color: ${props => props.$color};
-    left: ${props => props.$left};
-    top: ${props => props.$top};
+    left: 0;
+    top: 0;
     width: 120px;
     height: 150px;
     background-image: url(${annot});

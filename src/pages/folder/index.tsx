@@ -1,27 +1,81 @@
-
-import { MainShowcase } from "UI";
 import CardRecall from "components/cardRecall";
+import ShowcaseAnimate from "components/showcaseAnimate";
+import ChildrenShowcaseAnimate from "components/showcaseAnimate/childrenShowcaseAnimate";
+
+import { motion } from "framer-motion";
+
+import {AiOutlineArrowLeft} from "react-icons/ai";
 
 import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 
-const Main = styled(MainShowcase)`
-  padding-top: 140px;
-  h1{
-    top: 100px;
+import { useNavigate } from "react-router-dom";
+import useLocalStoragerContext from "hooks/useLocalStoragerContext";
+
+const Title = styled.h1`
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+`
+const NotItens = styled.div`
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Slab', serif;
+`
+const Box = styled.div`
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+`
+const ButtonDelet = styled(motion.button)`
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 45px;
+  height: 45px;
+  border: solid 4px black;
+  border-radius: 50%;
+  font-size: 1.8em;
+  background: #ff4747;
+  
+
+  .x{
+    transition: 0.3s;
+    opacity: 0;
+    background: #ffffff;
     position: absolute;
-    font-size: 3em;
-    font-family: 'Roboto', sans-serif;
+    font-size: 0.6em;
+    width: 20px;
+    height: 5px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+    border: 2px solid black;
+    transform: translate(-40%, -400%);
+    overflow: hidden;
+    text-overflow: clip;
+    cursor: pointer;
   }
 
-  .notItens{
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Roboto Slab', serif;
+  &:hover{
+    
+    .x{
+      transition: 0.3s;
+      width: 280px;
+      height: 25px;
+      opacity: 1;
+      transform: translate(-40%, -270%);
+
+    }
   }
+`
+
+const Main = styled(ShowcaseAnimate)`
+  padding: 0px 40px 0px 40px;
 `
 
 interface Iitem {
@@ -37,21 +91,42 @@ interface Iitem {
 const ShowcaseItensInFolder = () => {
 
   const { name, itens } = useLocation().state
+  
+  const nav = useNavigate()
+
+  const { foldersStorager, setFoldersStorager } = useLocalStoragerContext()
+
+  function deletFolder() {
+    if(foldersStorager.length !== 1){
+      setFoldersStorager(foldersStorager.filter(item => item === name ? false : true));
+    }else{
+      alert('You have to have at least one folder');
+    }
+    nav(-1)
+  }
 
   return (
     <Main $color="#81ffcf">
-      <h1>{name}</h1>
+      <Box>
+        <AiOutlineArrowLeft onClick={() => nav(-1)} style={{cursor: "pointer", border: "solid 4px black", borderRadius: "50%"}} size={45}/>
+        <Title>{name}</Title>
+        <ButtonDelet onClick={deletFolder}> X
+          <div className="x">Do you want to delete this folder?</div>
+        </ButtonDelet>
+      </Box>
       {itens.length > 0 ? itens.map((item: Iitem) =>
-        <CardRecall
-          color={item.color}
-          question={item.question}
-          respons={item.response}
-          key={item.id}
-        />) :
-        <div className="notItens">
+        <ChildrenShowcaseAnimate key={item.id}>
+          <CardRecall
+            color={item.color}
+            question={item.question}
+            respons={item.response}
+            id={item.id}
+          />
+        </ChildrenShowcaseAnimate>) :
+        <NotItens>
           <h2>There's nothing here</h2>
           <h3>cry a card in the create tab</h3>
-        </div>}
+        </NotItens>}
     </Main>
   )
 }

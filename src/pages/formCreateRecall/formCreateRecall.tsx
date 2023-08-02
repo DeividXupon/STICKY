@@ -1,12 +1,15 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 export const MainContainer = styled.main`
   display: flex;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  background: #ff2d2d;
 `
 
-export const BoxForm = styled.div`
+export const BoxForm = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -9,13 +9,29 @@ interface Iprops {
 }
 
 const DecorativeNote = ({ children, top, left, color}: Iprops) => {
+
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
   return (
     <Annotation
       $color={color}
       $top={top}
       $left={left}
-      animate={{ y: [8, -8, 8, -8, 8, -8, 8], rotate: [-4, 4, -4] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>{children}
+      initial={{x: 0, y: 0}}
+      drag
+      dragConstraints={{
+        top: 20,
+        left: 100,
+        right: screenWidth - 200,
+        bottom: screenHeight - 200,
+      }}
+      dragElastic={0.1}
+      dragMomentum={false}
+      animate={{x: left, y: top, rotate: [-4, 4, -4] }}
+      transition={{ duration: 1.5, ease: "easeInOut", rotate: {duration: 6, repeat: Infinity} }}
+    >
+      {children}
     </Annotation>
   )
 }
