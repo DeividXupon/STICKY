@@ -5,6 +5,7 @@ interface Ivalue {
   id: number,
   ative: boolean,
   routerName: string
+  icone: JSX.Element
 }
 
 type typeSetValue = React.Dispatch<SetStateAction<Ivalue[]>>

@@ -1,10 +1,7 @@
-import { MainShowcase } from "UI";
 import CardNote from "components/cardNote";
 import CardRecall from "components/cardRecall";
 import ShowcaseAnimate from "components/showcaseAnimate";
 import useLocalStoragerContext from "hooks/useLocalStoragerContext";
-
-
 
 const RandomCard = () => {
 
@@ -21,6 +18,7 @@ const RandomCard = () => {
 
   return (
     <ShowcaseAnimate $color="#cecece">
+      <h1 style={{width: "100vw", textAlign: "center", paddingTop: "20px", fontFamily: "'Roboto Slab', serif"}} >Random Card</h1>
       <div style={{marginTop: "8px"}}>
       { recallStorager.length !== 0 && noteStorager.length !== 0 ? 
       

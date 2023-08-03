@@ -22,12 +22,11 @@ const DecorativeNote = ({ children, top, left, color}: Iprops) => {
       drag
       dragConstraints={{
         top: 20,
-        left: 100,
-        right: screenWidth - 200,
-        bottom: screenHeight - 200,
+        left: 10,
+        right: screenWidth -75,
+        bottom: screenHeight -220,
       }}
       dragElastic={0.1}
-      dragMomentum={false}
       animate={{x: left, y: top, rotate: [-4, 4, -4] }}
       transition={{ duration: 1.5, ease: "easeInOut", rotate: {duration: 6, repeat: Infinity} }}
     >

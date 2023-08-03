@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import NavigationContext from "./navigationContext";
-import navJson from "data/navHock.json"
+import navLinks from "data/navHock";
 
 interface Iprops {
   children: ReactNode
@@ -8,7 +8,7 @@ interface Iprops {
 
 const NavigationProvaider = ({children}: Iprops) => {
 
-  const [nav, setNav] = useState(navJson)
+  const [nav, setNav] = useState(navLinks)
   
   useEffect(() => {console.log("abc")},[nav])
 

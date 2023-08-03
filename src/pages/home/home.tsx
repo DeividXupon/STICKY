@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Annotation } from "components/decorativeNote/decorativeNote";
+import { media760 } from "UI/variaveis";
 
 export const Main = styled(motion.main)`
     display: flex;
@@ -35,6 +36,17 @@ export const TextSection = styled(motion.section)`
         font-family: 'Roboto', sans-serif;
     }
 
+    @media (max-width: ${media760+"px"}) {
+        width: 90vw;
+        margin-top: 0;
+
+        h1{
+            font-size: 3em;
+        }
+        h2{
+            font-size: 1.2em;
+        }
+    }
 `
 
 export const Button = styled(motion.button)`

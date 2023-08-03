@@ -17,4 +17,8 @@ export const ContainerView = styled(motion.section)<{$color: string}>`
     text-align: center;
     width: 100%;
   }
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `

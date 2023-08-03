@@ -22,7 +22,7 @@ const Create = () => {
         duration: 0.15
       }}
     >
-      <h1 className="titulo__create">Create your Note or Active Recall</h1>
+      <h1 className="titulo__create">{window.innerWidth > 760 ? "Create your Note or Active Recall" : "Create"}</h1>
       <ChoiceSection>
         <AnimateBox
           initial={{ x: -500, y: 300 }}
@@ -51,6 +51,8 @@ const Create = () => {
             Recording and organizing important information helps with the memorization and understanding of content. It facilitates learning and knowledge retention. Taking notes of ideas and insights assists in creative expression and materializing thoughts.
           </CreateOption>
         </AnimateBox>
+        
+        {window.innerWidth < 760 ?<h1 className="titulo__create"> Or </h1>: null}
 
         <AnimateBox
           initial={{ x: 500, y: -300 }}

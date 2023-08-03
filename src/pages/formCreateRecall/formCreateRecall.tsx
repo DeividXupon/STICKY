@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { styled } from "styled-components";
+import { media760, media500 } from "UI/variaveis";
 
 export const MainContainer = styled.main`
   display: flex;
@@ -26,8 +27,9 @@ export const BoxForm = styled(motion.div)`
     justify-content: space-between;
     height: 400px;
     padding: 0px 15px 0px 15px;
+    gap: 30px;
   }
-  .choice{
+    .choice{
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -37,18 +39,33 @@ export const BoxForm = styled(motion.div)`
       background: #ff5252;
       border-top: 5px solid black;
 
-      .box{
-        display: flex;
-      }
+    .box{
+      display: flex;
+    }
 
-      #frutas {
-        width: 200px;
-        height: 40px;
-        text-align: center;
-        font-size: 1.2em;
-        font-family: 'Roboto Slab', serif;
-        border: 4px solid #000000;
-      }
+    #frutas {
+      width: 200px;
+      height: 40px;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: 'Roboto Slab', serif;
+      border: 4px solid #000000;
+    }
+  }
+  @media (max-width: 1000px) {
+    width: 100vw;
+  }
+
+  @media (max-width: ${media760+"px"}) {
+    padding: 10px 0px 60px 0px;
+
+    .form{
+      padding: 0px 5px 0px 5px;
+    }
+
+    .choice{
+      flex-direction: column;
+    }
   }
 `
 
@@ -60,6 +77,11 @@ export const InputChoice = styled.input`
   padding: 0px 8px 0px 8px;
   border: 4px solid black;  
   border-right:0px;
+
+  @media (max-width: ${media500+"px"}) {
+    width: 150px;
+    font-size: 1em;
+  }
 `
 
 export const ButtonChoice = styled.button`
@@ -79,4 +101,8 @@ export const Choice = styled.select`
   font-size: 1.2em;
   font-family: 'Roboto Slab', serif;
   border: 4px solid #000000;
+
+  @media (max-width: ${media500+"px"}) {
+    font-size: 1em;
+  }
 `

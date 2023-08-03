@@ -56,9 +56,9 @@ const FormCreateNote = () => {
 
   return (
     <MainContainer>
-      <FormSection 
-        initial={{x: "-100%"}}
-        animate={{x: "0%"}}
+      <FormSection
+        initial={{ x: "-100%" }}
+        animate={{ x: "0%" }}
         transition={{
           delay: 0.2,
           duration: 0.8,
@@ -101,9 +101,16 @@ const FormCreateNote = () => {
             )}
           </Tags>
         </BoxTextAndTag>
+        
+        <ButtonSubmitForm
+          color={getSelectColor(colorList)}
+          title={title}
+          text={text}
+          tags={tags.filter(item => item.select).map(item => item.nome)}
+          resetForm={resetForm}
+        />
 
       </FormSection>
-
       <Preview color="#fcff3e">
         <CardNote
           tags={tags.filter(item => item.select).map(item => item.nome)}

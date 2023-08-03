@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { styled } from "styled-components";
+import { media760 } from "./variaveis";
 
 export const InputLongText = styled.textarea<{$width?: string, $height?: string}>`
   resize: none;
@@ -69,6 +70,22 @@ export const Paragraph = styled.p<{$textSize: number}>`
       return "1em"
     }
   }};
+  
+  @media (max-width: ${media760+"px"}) {
+    font-size: ${props => {
+    if(props.$textSize <= 100){
+      return "1.4em"
+    }if(props.$textSize <= 200){
+      return "1.2em"
+    }if(props.$textSize <= 300){
+      return "1.1em"
+    }if(props.$textSize <= 400){
+      return "1em"
+    }else{
+      return "0.855em"
+    }
+  }}
+  };
 `
 
 export const Fechar = styled.button`
@@ -82,6 +99,13 @@ export const Fechar = styled.button`
   font-size: 1.15em;
   font-family: 'Roboto Slab', serif;
   cursor: pointer;
+
+  @media (max-width: ${media760+"px"}) {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    transform: translate(-130%, 70%);
+  }
 `
 export const SubmitButton = styled.button`
   width: 200px;
@@ -92,6 +116,10 @@ export const SubmitButton = styled.button`
   font-size: 1.5em;
   font-family: 'Roboto Slab', serif;
   cursor: pointer;
+
+  @media (max-width: ${media760+"px"}) {
+    order: -1;
+  }
 `
 
 export const MainShowcase = styled(motion.main)<{$color?: string}>`
@@ -105,4 +133,11 @@ export const MainShowcase = styled(motion.main)<{$color?: string}>`
   background: ${props => props.$color ? props.$color : "#7bf6ff"} ;
   justify-content: center;
   gap: 40px;
+  overflow-x: hidden;
+
+  @media (max-width: ${media760+"px"}) {
+    gap: 15px;
+    padding-top: 0px;
+    padding-bottom: 80px;
+  }
 `

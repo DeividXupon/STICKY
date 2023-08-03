@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { media500 } from "UI/variaveis";
 
 export const CardBox = styled.div<{$color: string | undefined}>`
   display: flex;
@@ -8,6 +9,10 @@ export const CardBox = styled.div<{$color: string | undefined}>`
   height: 300px;
   background: ${props => props.$color};
   border: 5px solid black;
+
+  @media (max-width: ${media500+"px"}) {
+    width: 300px;
+  }
 `
 
 export const ButtonCard = styled.button`
@@ -23,5 +28,13 @@ export const ButtonCard = styled.button`
   cursor: pointer;
   &:hover{
     background: white;
+  }
+
+  @media (max-width: ${media500+"px"}) {
+    font-size: 0.9em;
+    left: 50%;
+    width: 100px;
+    height: 30px;
+    top: -30px;
   }
 `

@@ -70,8 +70,8 @@ const FormCreateRecall = () => {
 
       </Preview>
       <BoxForm
-        initial={{x: "100%"}}
-        animate={{x: "0%"}}
+        initial={{ x: "100%" }}
+        animate={{ x: "0%" }}
         transition={{
           delay: 0.2,
           duration: 0.8,
@@ -97,6 +97,13 @@ const FormCreateRecall = () => {
             maxLength={500}
             placeholder="Respons..."
             $height="150px" />
+
+          <ButtonSubmitFormRecall
+            color={getSelectColor(colorList)}
+            question={question}
+            response={respons}
+            folder={folder ? folder : "Generic"}
+            resetForm={resetForm} />
 
 
         </section>

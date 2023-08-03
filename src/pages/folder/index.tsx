@@ -12,6 +12,8 @@ import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import useLocalStoragerContext from "hooks/useLocalStoragerContext";
 
+import { media760 } from "UI/variaveis";
+
 const Title = styled.h1`
   font-size: 3em;
   text-align: center;
@@ -42,6 +44,7 @@ const ButtonDelet = styled(motion.button)`
   border-radius: 50%;
   font-size: 1.8em;
   background: #ff4747;
+  cursor: pointer;
   
 
   .x{
@@ -71,6 +74,10 @@ const ButtonDelet = styled(motion.button)`
       transform: translate(-40%, -270%);
 
     }
+  }
+
+  @media (max-width: ${media760+"px"}) {
+    &:hover{.x{transform: translate(-80%, 100%);}}
   }
 `
 

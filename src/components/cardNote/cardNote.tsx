@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
+import { media760 } from "UI/variaveis";
 
-export const Card = styled.div<{$color?: string}>`
+export const Card = styled.div<{ $color?: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +15,17 @@ export const Card = styled.div<{$color?: string}>`
     margin-top: 10px;
     font-size: 2em;
     font-family: 'Roboto', sans-serif;
+  }
+
+  @media (max-width: ${media760 + "px"}) {
+    width: 300px;
+    height: 350px;
+
+    .card_note_title{
+      margin-top: 0px;
+      font-size: 1.8em;
+    }
+    
   }
 `
 

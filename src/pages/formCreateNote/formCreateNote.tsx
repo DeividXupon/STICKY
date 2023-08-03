@@ -19,6 +19,16 @@ export const FormSection = styled(motion.section)`
   padding: 90px 15px 10px 15px;
   justify-content: space-between;
   z-index: 1;
+
+  @media (max-width: 1000px) {
+    width: 100vw;
+    padding: 90px 15px 30px 15px;
+    align-items: center;
+  }
+
+  @media (max-width: 760px) {
+    padding: 30px 5px 90px 5px;
+  }
 `
 
 export const BoxInputTitle = styled.div`
@@ -51,6 +61,16 @@ export const Tags = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   width: 100%;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 `
 
 export const Tag = styled.button<{ $select: boolean }>`
@@ -61,4 +81,8 @@ export const Tag = styled.button<{ $select: boolean }>`
   font-family: 'Roboto Slab', serif;
   border-radius: 0%;
   cursor: pointer;
+
+  @media (max-width: 500px) {
+    font-size: 0.9em;
+  }
 `

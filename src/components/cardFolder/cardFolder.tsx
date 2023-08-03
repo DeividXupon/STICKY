@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { media500 } from "UI/variaveis";
 
 export const BoxCard = styled.div`
   margin: 20px;
@@ -6,6 +7,12 @@ export const BoxCard = styled.div`
   width: 450px;
   border: 5px solid black;
   background: #fff281;
+
+  @media (max-width: ${media500+"px"}) {
+    margin: 0px;
+    margin-top: -30px;
+    transform: scale(0.655);
+  }
 `
 
 export const Paper = styled.div`

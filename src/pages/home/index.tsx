@@ -23,7 +23,7 @@ export default function Home() {
     top: "270px",
     left: "150px",
     background: "#0000000",
-    zIndex: 1999
+    zIndex: 10
   })
 
   return (
@@ -73,8 +73,8 @@ export default function Home() {
       </motion.div>
 
       <DecorativeNote color="#ff6d6d" top="270px" left="150px">ideas</DecorativeNote>
-      <DecorativeNote color="#a0ff93" top="400px" left="950px">creativity</DecorativeNote>
-      <DecorativeNote color="#7bbfff" top="150px" left="1100px">thoughts</DecorativeNote>
+      <DecorativeNote color="#a0ff93" top={"270px"} left={"150px"}>creativity</DecorativeNote>
+      <DecorativeNote color="#7bbfff" top={"270px"} left={"150px"}>thoughts</DecorativeNote>
 
       <TextSection>
         <h2>WELCOME TO <b>S2</b> STICKY</h2>
