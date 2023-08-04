@@ -7,6 +7,14 @@ export const MainContainer = styled.main`
   height: 100vh;
   background: #fcff3e;
   overflow: hidden;
+
+  .but{
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: block;
+    }
+  }
 `
 export const FormSection = styled(motion.section)`
   display: flex;

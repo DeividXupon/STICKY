@@ -97,13 +97,15 @@ const FormCreateRecall = () => {
             maxLength={500}
             placeholder="Respons..."
             $height="150px" />
-
-          <ButtonSubmitFormRecall
-            color={getSelectColor(colorList)}
-            question={question}
-            response={respons}
-            folder={folder ? folder : "Generic"}
-            resetForm={resetForm} />
+            
+          <div className="but">
+            <ButtonSubmitFormRecall
+              color={getSelectColor(colorList)}
+              question={question}
+              response={respons}
+              folder={folder ? folder : "Generic"}
+              resetForm={resetForm} />
+          </div>
 
 
         </section>

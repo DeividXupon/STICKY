@@ -101,14 +101,15 @@ const FormCreateNote = () => {
             )}
           </Tags>
         </BoxTextAndTag>
-        
-        <ButtonSubmitForm
-          color={getSelectColor(colorList)}
-          title={title}
-          text={text}
-          tags={tags.filter(item => item.select).map(item => item.nome)}
-          resetForm={resetForm}
-        />
+        <div className="but">
+          <ButtonSubmitForm
+            color={getSelectColor(colorList)}
+            title={title}
+            text={text}
+            tags={tags.filter(item => item.select).map(item => item.nome)}
+            resetForm={resetForm}
+          />
+        </div>
 
       </FormSection>
       <Preview color="#fcff3e">
@@ -127,6 +128,7 @@ const FormCreateNote = () => {
           tags={tags.filter(item => item.select).map(item => item.nome)}
           resetForm={resetForm}
         />
+
       </Preview>
     </MainContainer>
   )

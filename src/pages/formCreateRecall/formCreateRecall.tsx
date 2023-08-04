@@ -28,6 +28,9 @@ export const BoxForm = styled(motion.div)`
     height: 400px;
     padding: 0px 15px 0px 15px;
     gap: 30px;
+    .but{
+      display: none;
+    }
   }
     .choice{
       display: flex;
@@ -54,6 +57,11 @@ export const BoxForm = styled(motion.div)`
   }
   @media (max-width: 1000px) {
     width: 100vw;
+    .form{
+      .but{
+        display: block;
+      }
+    }
   }
 
   @media (max-width: ${media760+"px"}) {
@@ -64,7 +72,8 @@ export const BoxForm = styled(motion.div)`
     }
 
     .choice{
-      flex-direction: column;
+      padding: 0px;
+      justify-content: space-between;
     }
   }
 `
@@ -96,6 +105,7 @@ export const ButtonChoice = styled.button`
 `
 export const Choice = styled.select`
   width: 200px;
+  min-width: 100px;
   height: 40px;
   text-align: center;
   font-size: 1.2em;

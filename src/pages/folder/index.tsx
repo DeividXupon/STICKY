@@ -14,6 +14,8 @@ import useLocalStoragerContext from "hooks/useLocalStoragerContext";
 
 import { media760 } from "UI/variaveis";
 
+import { RiDeleteBin5Fill } from "react-icons/ri"
+
 const Title = styled.h1`
   font-size: 3em;
   text-align: center;
@@ -117,7 +119,7 @@ const ShowcaseItensInFolder = () => {
       <Box>
         <AiOutlineArrowLeft onClick={() => nav(-1)} style={{cursor: "pointer", border: "solid 4px black", borderRadius: "50%"}} size={45}/>
         <Title>{name}</Title>
-        <ButtonDelet onClick={deletFolder}> X
+        <ButtonDelet onClick={deletFolder}> <RiDeleteBin5Fill style={{marginTop: "3px"}}/>
           <div className="x">Do you want to delete this folder?</div>
         </ButtonDelet>
       </Box>

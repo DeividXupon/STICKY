@@ -34,7 +34,7 @@ export const Icon = styled.div`
 
 export const Option = styled.div`
   width: 450px;
-  min-width: 350px;
+  min-width: 450px;
   height: 350px;
   background-color: #b2ffa8;
   border: 4px solid black;
@@ -79,12 +79,14 @@ export const Option = styled.div`
 
   @media (max-width: ${media760+"px"}) {
     width: 290px;
+    min-width: 290px;
     height: auto;
     padding: 10px;
   }
 
   @media (max-width: 1000px) {
     width: 360px;
+    min-width: 360px;
   }
 `
 
@@ -95,6 +97,7 @@ export const Text = styled.p`
   font-family: 'Roboto Slab', serif;
 
   @media (max-width: ${media760+"px"}) {
-    padding: 0px;
+    font-size: 0.95em;
+    padding: 0px 20px 0px 20px;
   }
 `

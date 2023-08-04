@@ -19,7 +19,7 @@ const RandomCard = () => {
   return (
     <ShowcaseAnimate $color="#cecece">
       <h1 style={{width: "100vw", textAlign: "center", paddingTop: "20px", fontFamily: "'Roboto Slab', serif"}} >Random Card</h1>
-      <div style={{marginTop: "8px"}}>
+      <div style={{marginTop: "-30px"}}>
       { recallStorager.length !== 0 && noteStorager.length !== 0 ? 
       
       typeCard === 1 && noteStorager.length !== 0?

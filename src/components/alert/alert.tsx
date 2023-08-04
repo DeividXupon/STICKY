@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { media760 } from "UI/variaveis";
 
 export const BoxAlert = styled.div`
   display: grid;
@@ -26,12 +27,32 @@ export const BoxAlert = styled.div`
     margin: -50px;
     transform: scale(0.65);
   }
+
+  @media (max-width: ${media760+"px"}) {
+    width: 318px;
+    height: 400px;
+    top: 50%;
+
+    .title{
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .card{
+      display: none;
+    }
+  }
 `
 
 export const ButtonAlert = styled.button<{$color: boolean}>`
-    border: 5px solid black;
-    background: #fff;
-    width: 200px;
-    height: 50px;
-    background: ${props => props.$color ? "#ff3535" : "#bcff3e"};
+  border: 5px solid black;
+  background: #fff;
+  width: 200px;
+  height: 50px;
+  background: ${props => props.$color ? "#ff3535" : "#bcff3e"};
+
+  @media (max-width: ${media760+"px"}) {
+    width: 60px;
+    height: 40px;
+  }
 `
