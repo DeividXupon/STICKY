@@ -22,7 +22,7 @@ const ButtonSubmitForm = ({ color, tags, title, text, resetForm }: Iprops) => {
 
   return (
     <SubmitButton onClick={() => submit({color, tags, title, text, id: uuidv4()})}>
-      To Create
+      Create
     </SubmitButton>
   )
 }

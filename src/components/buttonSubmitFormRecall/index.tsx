@@ -27,7 +27,7 @@ const ButtonSubmitFormRecall = ({ color, question, response, folder, resetForm }
   }
 
   return (
-    <SubmitButton onClick={() => addItemInStorager({color, folder, question, response, id: uuidv4()})}>To Create</SubmitButton>
+    <SubmitButton onClick={() => addItemInStorager({color, folder, question, response, id: uuidv4()})}>Create</SubmitButton>
   )
 }
 
