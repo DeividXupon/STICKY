@@ -34,7 +34,7 @@ const RandomCard = () => {
           color={randomRecallIndex.color}
           question={randomRecallIndex.question}
           respons={randomRecallIndex.response}
-          key={randomRecallIndex.id} /> : <h1>Nothing here {recallStorager.length === 0 ? " cry at least one recall-type card" : " cry at least one note-type card"}</h1>}
+          key={randomRecallIndex.id} /> : <h1>Nothing here {recallStorager.length === 0 ? ", so create at least a note card" : ", so create at least a recall card"}</h1>}
         </div>
     </ShowcaseAnimate>
   )
